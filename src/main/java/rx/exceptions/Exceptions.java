@@ -82,16 +82,8 @@ public final class Exceptions {
             throw (OnErrorFailedException) t;
         }
         // values here derived from https://github.com/ReactiveX/RxJava/issues/748#issuecomment-32471495
-        else if (t instanceof StackOverflowError) {
-            throw (StackOverflowError) t;
-        } else if (t instanceof VirtualMachineError) {
-            throw (VirtualMachineError) t;
-        } else if (t instanceof ThreadDeath) {
-            throw (ThreadDeath) t;
-        } else if (t instanceof LinkageError) {
-            throw (LinkageError) t;
-        } else if (t instanceof AssertionError) {
-			throw (AssertionError) t;
+        else if (t instanceof Error) {
+            throw (Error) t;
 		}
     }
 
